@@ -1,0 +1,27 @@
+[
+  {
+    "task": "Waking up",
+    "energy_cost": 40,
+    "feedback": "Woke up groggy from a sugar crash"
+  },
+  {
+    "task": "Eat Breakfast",
+    "energy_cost": 30,
+    "feedback": "Counted carbs before eating"
+  },
+  {
+    "task": "Grocery Shopping",
+    "energy_cost": 50,
+    "feedback": "Sugar started dropping mid-aisle"
+  },
+  {
+    "task": "Go to Class/Work",
+    "energy_cost": 45,
+    "feedback": "Brain fog made it hard to follow instructions"
+  },
+  {
+    "task": "Take a Shower",
+    "energy_cost": 35,
+    "feedback": "Had a low mid-shower and slipped slightly"
+  }
+]
