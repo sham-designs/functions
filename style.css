@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 
-
+body {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -1px;
+  }
 
 
 #task-buttons button {
@@ -12,7 +16,7 @@
 
 
   h2{
-    font-size: 34px;
+    font-size: 24px;
   }
 
   #energy-bar {
