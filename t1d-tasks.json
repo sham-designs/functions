@@ -2,26 +2,36 @@
   {
     "task": "Waking up",
     "energy_cost": 40,
-    "feedback": "Woke up groggy from a sugar crash"
+    "normal_energy_cost": 10,
+    "feedback": "Woke up groggy from a sugar crash",
+    "time": "7:00 AM"
   },
   {
     "task": "Eat Breakfast",
     "energy_cost": 30,
-    "feedback": "Counted carbs before eating"
+    "normal_energy_cost": 10,
+    "feedback": "Counted carbs before eating",
+    "time": "8:00 AM"
   },
   {
     "task": "Grocery Shopping",
     "energy_cost": 50,
-    "feedback": "Sugar started dropping mid-aisle"
+    "normal_energy_cost": 15,
+    "feedback": "Sugar started dropping mid-aisle",
+    "time": "11:00 AM"
   },
   {
     "task": "Go to Class/Work",
     "energy_cost": 45,
-    "feedback": "Brain fog made it hard to follow instructions"
+    "normal_energy_cost": 20,
+    "feedback": "Brain fog made it hard to follow instructions",
+    "time": "1:00 PM"
   },
   {
     "task": "Take a Shower",
     "energy_cost": 35,
-    "feedback": "Had a low mid-shower and slipped slightly"
+    "normal_energy_cost": 10,
+    "feedback": "Had a low mid-shower and slipped slightly",
+    "time": "2:00 PM"
   }
 ]

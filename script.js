@@ -1,9 +1,17 @@
 //since the variable we are playing with is the energy bar that dynamically changes for every task, lets define it for the full value
 
 let energy = 100;
+let normalEnergy = 100;
 
-//grabbing my elements now that is setup on html by id
 
+
+
+//grabbing normal energy level elements from HTML by ID
+const normalEnergyBar = document.getElementById("normal-energy-bar");
+const normalEnergyValue = document.getElementById("normal-energy-value");
+const cutoffMessage = document.getElementById("cutoff-message");
+
+//grabbing my t1d elements now that is setup on html by id
 const energyBar = document.getElementById("energy-bar");
 const energyValue = document.getElementById("energy-value");
 const feedbackBox = document.getElementById("feedback");
@@ -36,18 +44,36 @@ fetch("t1d-tasks.json")
     }
     
 
-//when a task is clicked
+    
+/// when a task is clicked
 function handleTaskClick(taskName) {
     const task = taskData.find((t) => t.task === taskName);
-    //look through my json file
-    if (!task) return; //for error
-
+    // look through my json file
+    if (!task) return; // for error
+  
+    // Subtract energy for both T1D (me) and normal user
     energy -= task.energy_cost;
-    if (energy < 0) energy = 0;  //reduce energy, but dont let it go below zero
-    updateEnergyUI(); //update energy bar logic
-    showFeedback(task.feedback); //return the feedback that i have put
+    normalEnergy -= task.normal_energy_cost;
+  
+    // reduce energy, but don’t let it go below zero
+    if (energy < 0) energy = 0;
+    if (normalEnergy < 0) normalEnergy = 0;
+  
+    // update energy bar logic
+    updateEnergyUI();
+  
+    // return the feedback that I have put
+    showFeedback(task.feedback);
+  
+    // If my energy hits zero for the first time, then message is
+    if (energy === 0 && cutoffMessage.textContent === "") {
+      cutoffMessage.textContent = `You ran out of energy by ${task.time}. A non-diabetic person still had ${normalEnergy}% left.`;
+    }
   }
+  
     
+
+
 
  //energy bar function and logic
  function updateEnergyUI() {
@@ -62,6 +88,10 @@ function handleTaskClick(taskName) {
       } else {
         energyBar.style.background = "red";
       }
+
+      // Normal bar update
+        normalEnergyValue.textContent = `Energy: ${normalEnergy}`;
+        normalEnergyBar.style.width = `${normalEnergy}%`;
     }
 
 
@@ -76,7 +106,10 @@ function showFeedback(feedback) {
   //to reset the energy bar to 100 again
   document.getElementById("restart-day").addEventListener("click", () => {
     energy = 100;
+    normalEnergy = 100;
     updateEnergyUI();
+    feedbackBox.innerHTML = "";
+    cutoffMessage.textContent = "";
   });
   
     
