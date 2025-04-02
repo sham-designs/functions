@@ -23,3 +23,17 @@ body {
     margin-top: 0.5rem;
     transition: width 0.3s ease;
   }
+
+
+  @media (max-width: 600px) { 
+
+
+    #task-buttons button {
+        padding: 1rem 1.5rem;
+        font-size: 12px;
+      
+      }
+    
+
+
+}
