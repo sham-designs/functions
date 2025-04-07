@@ -38,6 +38,7 @@ fetch("t1d-tasks.json")
     buttons.forEach((btn) => {
         btn.addEventListener("click", () => {
           const taskName = btn.dataset.task;
+          btn.disabled = true;
           handleTaskClick(taskName);
         });
       });
@@ -110,6 +111,9 @@ function showFeedback(feedback) {
     updateEnergyUI();
     feedbackBox.innerHTML = "";
     cutoffMessage.textContent = "";
+
+    // go through all buttons and remove disabled attribute
+    btns.forEach(btn => btn.disabled = false)
   });
   
     
