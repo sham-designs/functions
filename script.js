@@ -1,3 +1,4 @@
+
 //since the variable we are playing with is the energy bar that dynamically changes for every task, lets define it for the full value
 
 let energy = 100;
@@ -69,6 +70,7 @@ function handleTaskClick(taskName) {
     // If my energy hits zero for the first time, then message is
     if (energy === 0 && cutoffMessage.textContent === "") {
       cutoffMessage.textContent = `You ran out of energy by ${task.time}. A non-diabetic person still had ${normalEnergy}% left.`;
+      triggerSystemCrash();
     }
   }
   
@@ -119,4 +121,39 @@ function showFeedback(feedback) {
     
   
 
+
+
+
   
+// Entry Modal Logic
+const entryModal = document.getElementById("entryModal");
+const startBtn = document.getElementById("startSimulation");
+const closeEntry = document.getElementById("closeEntry");
+
+// Show on load
+window.onload = () => {
+  entryModal.style.display = "flex";
+};
+
+startBtn.onclick = () => {
+  entryModal.style.display = "none";
+};
+
+// Exit Modal Logic
+const exitModal = document.getElementById("exitModal");
+const resetBtn = document.getElementById("resetExperience");
+const closeExit = document.getElementById("closeExit");
+
+function triggerSystemCrash() {
+  exitModal.style.display = "flex";
+}
+
+// Demo reset (you can update this to refresh or restart simulation)
+resetBtn.onclick = () => {
+  exitModal.style.display = "none";
+  location.reload(); // or reset your variables
+};
+
+// Optional: close buttons
+closeEntry.onclick = () => entryModal.style.display = "none";
+closeExit.onclick = () => exitModal.style.display = "none";
