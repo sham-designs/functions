@@ -66,6 +66,9 @@ function handleTaskClick(taskName) {
   
     // return the feedback that I have put
     showFeedback(task.feedback);
+
+
+
   
     // If my energy hits zero for the first time, then message is
     if (energy === 0 && cutoffMessage.textContent === "") {
@@ -157,3 +160,26 @@ resetBtn.onclick = () => {
 // Optional: close buttons
 closeEntry.onclick = () => entryModal.style.display = "none";
 closeExit.onclick = () => exitModal.style.display = "none";
+
+
+
+
+
+
+
+// function addPill(text) {
+//     const container = document.getElementById('pill-container');
+//     const pill = document.createElement('div');
+//     pill.className = 'pill';
+//     pill.innerText = text;
+//     container.appendChild(pill);
+  
+//     // Optionally remove after it falls
+//     setTimeout(() => {
+//       pill.remove();
+//     }, 4000);
+//   }
+  
+//   // Example: trigger a pill
+//   addPill("Woke up groggy from a sugar crash");
+  

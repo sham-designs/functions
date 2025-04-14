@@ -1,46 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=IBM+Plex+Mono&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-
+/* CLEANED + FUNCTIONAL */
 
 body {
-    font-family: 'Inter', sans-serif;
-    letter-spacing: -0.5px;
-  }
-
-
-#task-buttons button {
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-    margin: 0.5rem;
-    background-color: #eaeaea;
-  }
-
-
-  h2{
-    font-size: 24px;
-  }
-
-  #energy-bar {
-    margin-top: 0.5rem;
-    transition: width 0.3s ease;
-  }
-
-
-  @media (max-width: 600px) { 
-
-
-    #task-buttons button {
-        padding: 1rem 1.5rem;
-        font-size: 12px;
-      
-      }
-    
-
-
+  margin: 0;
+  background-color: #0a0a0a;
+  color: #fff;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
 }
 
+/* TYPOGRAPHY */
+header h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  margin: 1rem 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
+/* META BAR */
+#meta-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  background-color: #111;
+  border-bottom: 1px solid #222;
+  font-size: 0.85rem;
+  color: #ccc;
+}
 
+#meta-stats span {
+  margin-left: 1rem;
+}
+
+/* ENERGY BLOCK */
+#energy-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2rem 1rem;
+  gap: 2rem;
+}
+
+.energy-block {
+  text-align: center;
+}
+
+.energy-block label {
+  font-size: 0.85rem;
+  color: #888;
+  display: block;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+#normal-energy-value,
+#energy-value {
+  font-size: 3rem;
+  font-family: 'Space Grotesk', sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+#normal-energy-bar,
+#energy-bar {
+  width: 100px;
+  height: 8px;
+  background-color: #444;
+  transition: width 0.4s ease;
+}
+
+/* TASK BUTTONS */
+#task-section {
+  padding: 1rem 2rem;
+}
+
+#task-buttons button {
+  background: none;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 1rem;
+  width: 100%;
+  margin-bottom: 0.75rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.9rem;
+  text-align: left;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+#task-buttons button:hover {
+  background-color: #1a1a1a;
+  border-color: #888;
+}
+
+/* FEEDBACK */
+#feedback-section {
+  padding: 1rem 2rem;
+}
+
+#feedback-section h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: #888;
+}
+
+#feedback p {
+  background-color: #1a1a1a;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  color: #f44336;
+  border-left: 4px solid #f44336;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🟥 MODALS — ENTRY + EXIT */
 .modal {
     display: none;
     position: fixed;
@@ -49,10 +133,15 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(6px);
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+  }
+  
+  .modal.show {
+    display: flex !important;
   }
   
   .modal-content {
@@ -62,17 +151,9 @@ body {
     max-width: 400px;
     color: white;
     text-align: center;
-    box-shadow: 0 0 20px rgba(255,255,255,0.1);
-  }
-  
-  .modal-content button {
-    margin-top: 1em;
-    padding: 10px 20px;
-    border: none;
-    background-color: #555;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    position: relative; /* ADD THIS */
+    z-index: 1001; /* ENSURE BUTTONS ARE ABOVE MODAL BACKDROP */
   }
   
   .close {
@@ -84,3 +165,82 @@ body {
     cursor: pointer;
   }
   
+  button {
+    background-color: #444;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 1em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #666;
+  }
+
+
+/* ENTRY MODAL (GLITCHY VIBE) */
+/* .modal.glitch-bg {
+  background: #0d0d0d url('https://grainy-gradients.vercel.app/noise.svg');
+  backdrop-filter: blur(4px);
+}
+
+.modal-content.glitch-box {
+  border: 1px solid #333;
+  background-color: #111;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
+  animation: slightFlicker 2s infinite ease-in-out;
+} */
+
+.modal-heading {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 1.6rem;
+  color: #eee;
+  margin-bottom: 1rem;
+}
+
+.modal-subtext {
+  font-size: 0.95rem;
+  color: #aaa;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+/* ENTRY MODAL BUTTON */
+.glow-button {
+  font-family: inherit;
+  background-color: #000;
+  border: 1px solid #ff0055;
+  color: #ff0055;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+
+.glow-button:hover {
+  background-color: #ff0055;
+  color: #000;
+  box-shadow: 0 0 10px #ff0055;
+}
+
+/* FLICKER ANIMATION */
+@keyframes slightFlicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.98; transform: scale(1.001); }
+  100% { opacity: 1; }
+}
+
+
+.modal[style*="display: flex"] {
+    display: flex !important;
+  }
+
+  
+  .modal button, .modal .close {
+    pointer-events: auto;
+  }
+
