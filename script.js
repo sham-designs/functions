@@ -1,4 +1,9 @@
 
+
+//clickcount0 for metadata nav bar
+let clickedCount = 0;
+
+
 //since the variable we are playing with is the energy bar that dynamically changes for every task, lets define it for the full value
 
 let energy = 100;
@@ -60,10 +65,30 @@ function handleTaskClick(taskName) {
     // reduce energy, but don’t let it go below zero
     if (energy < 0) energy = 0;
     if (normalEnergy < 0) normalEnergy = 0;
+
+
+    //trying to dynamic metadata nav bar
+    clickedCount++;
+
+
   
     // update energy bar logic
     updateEnergyUI();
   
+
+//function to dynamic metadata navbar
+document.getElementById("sim-time").textContent = `Time: ${task.time}`;
+document.getElementById("tasks-done").textContent = `Tasks: ${clickedCount}/5`;
+
+let breakdown = "Stable";
+if (energy < 60) breakdown = "Slight fatigue";
+if (energy < 30) breakdown = "Crying for help";
+document.getElementById("breakdown").textContent = `Breakdown: ${breakdown}`;
+
+
+
+
+
     // return the feedback that I have put
     showFeedback(task.feedback);
 
@@ -183,3 +208,34 @@ closeExit.onclick = () => exitModal.style.display = "none";
 //   // Example: trigger a pill
 //   addPill("Woke up groggy from a sugar crash");
   
+
+
+
+//live clock? asked gpt to help
+function updateClock() {
+  const now = new Date();
+  const hours = now.getHours() % 12 || 12;
+  const minutes = now.getMinutes().toString().padStart(2, "0");
+  const seconds = now.getSeconds().toString().padStart(2, "0");
+  const ampm = now.getHours() >= 12 ? "PM" : "AM";
+  const timeStr = `Time: ${hours}:${minutes}:${seconds} ${ampm}`;
+  document.getElementById("sim-time").textContent = timeStr;
+}
+
+setInterval(updateClock, 1000); // update every second
+updateClock(); // initial call
+
+
+
+//random glucose calculator lol
+let glucose = 146;
+
+function updateGlucose() {
+  const change = Math.floor(Math.random() * 11) - 5; // -5 to +5
+  glucose = Math.max(70, glucose + change); // keep it realistic
+  document.getElementById("glucose-level").textContent = `Glucose: ${glucose} mg/dL`;
+}
+
+setInterval(updateGlucose, 1000);
+updateGlucose(); // initial
+
