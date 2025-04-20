@@ -40,6 +40,24 @@ header p{
   margin-left: 1rem;
 }
 
+
+/* breakdown meta data colour changes */
+#breakdown.stable {
+  color: green;
+}
+
+#breakdown.fatigue {
+  color: orange;
+}
+
+#breakdown.crash {
+  color: red;
+}
+
+
+
+
+
 /* energy blocks*/
 #energy-section {
   display: flex;
@@ -81,7 +99,7 @@ header p{
   padding: 1rem 2rem;
 }
 
-#task-buttons button {
+/* #task-buttons button {
   background: none;
   color: #fff;
   border: 1px solid #444;
@@ -93,12 +111,41 @@ header p{
   text-align: left;
   transition: all 0.2s ease;
   cursor: pointer;
+} */
+
+
+/* 
+#task-buttons button:hover {
+  background-color: #1a1a1a;
+  border-color: #888;
+} */
+
+
+#task-buttons button {
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 1rem;
+  width: 100%;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  font-family: 'IBM Plex Mono', monospace;
+  text-align: left;
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 #task-buttons button:hover {
   background-color: #1a1a1a;
   border-color: #888;
 }
+
+
+#task-buttons button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 
 /* feedback */
 #feedback-section {
@@ -247,6 +294,27 @@ header p{
   .modal button, .modal .close {
     pointer-events: auto;
   }
+
+
+
+/* Making task and feedback side by side */
+#response-block {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: flex-start;
+}
+
+#energy-section {
+  flex: 1;
+}
+
+#system-feedback-block {
+  flex: 1;
+}
+
+
 
 
 

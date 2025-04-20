@@ -31,7 +31,7 @@
 
   <!-- SYSTEM HEADER / META BAR -->
   <section id="meta-bar">
-    <div id="session-info">SESSION_04_SHAM | T1D SIM</div>
+    <div id="session-info">T1D DAILY SIMULATOR — SYSTEM VIEW | SESSION_04_SHAM</div>
     <div id="meta-stats">
       <span id="sim-time">Time: 9:00AM</span>
       <span id="glucose-level">Glucose: 146 mg/dL</span>
@@ -48,18 +48,23 @@
 
   <!-- ENERGY DISPLAY -->
   <section id="energy-section">
-    <div class="energy-block">
-      <label>Normal</label>
-      <div id="normal-energy-value">Energy: 100</div>
-      <div id="normal-energy-bar"></div>
-    </div>
-    <div class="energy-block">
-      <label>Diabetic</label>
-      <div id="energy-value">Energy: 100</div>
-      <div id="energy-bar"></div>
-    </div>
+        <div class="energy-block">
+          <label>Normal</label>
+          <div id="normal-energy-value">Energy: 100</div>
+          <div id="normal-energy-bar"></div>
+        </div>
+        
+        <div class="energy-block">
+          <label>Diabetic</label>
+          <div id="energy-value">Energy: 100</div>
+          <div id="energy-bar"></div>
+        </div>
   </section>
 
+
+<!-- Making timeline and feedback side by side on desktop -->
+
+<section id="response-block">
   <!-- TASK TIMELINE -->
   <section id="task-section">
     <div id="task-buttons">
@@ -73,13 +78,13 @@
 
   <!-- FEEDBACK PILLS -->
   <section id="feedback-section">
-    <h2>System Feedback</h2>
+    <h2>System Feedback: Unseen load detected.</h2>
     <div id="feedback"></div>
   </section>
 
   <!-- HIDDEN but required for JS reset logic -->
   <button id="restart-day" style="display:none;"></button>
-
+</section>
 
 
 

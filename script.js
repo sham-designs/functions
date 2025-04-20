@@ -81,9 +81,19 @@ document.getElementById("sim-time").textContent = `Time: ${task.time}`;
 document.getElementById("tasks-done").textContent = `Tasks: ${clickedCount}/5`;
 
 let breakdown = "Stable";
-if (energy < 60) breakdown = "Slight fatigue";
-if (energy < 30) breakdown = "Crying for help";
-document.getElementById("breakdown").textContent = `Breakdown: ${breakdown}`;
+let breakdownClass = "stable";
+if (energy < 60) {
+  breakdown = "Slight fatigue";
+  breakdownClass = "fatigue";
+}
+if (energy < 30) {
+  breakdown = "Crying for help";
+  breakdownClass = "crash";
+}
+
+const breakdownEl = document.getElementById("breakdown");
+breakdownEl.textContent = `Breakdown: ${breakdown}`;
+breakdownEl.className = breakdownClass;
 
 
 
