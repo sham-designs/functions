@@ -1,37 +1,56 @@
 [
   {
     "task": "Waking up",
-    "energy_cost": 40,
+    "energy_cost": 30,
     "normal_energy_cost": 10,
-    "feedback": "Woke up groggy from a sugar crash",
+    "feedback": [
+      "Blood sugar was too low when I opened my eyes",
+      "Felt shaky and heavy — couldn’t sit up right away",
+      "Had to check my levels before I even left the bed"
+    ],
     "time": "7:00 AM"
   },
   {
     "task": "Eat Breakfast",
-    "energy_cost": 30,
+    "energy_cost": 28,
     "normal_energy_cost": 10,
-    "feedback": "Counted carbs before eating",
+    "feedback": [
+      "Had to count carbs and take insulin before eating",
+      "Waited to eat while others were already halfway through"
+    ],
     "time": "8:00 AM"
   },
   {
     "task": "Grocery Shopping",
-    "energy_cost": 50,
+    "energy_cost": 35,
     "normal_energy_cost": 15,
-    "feedback": "Sugar started dropping mid-aisle",
+    "feedback": [
+      "Blood sugar started dropping in the middle of the store",
+      "Felt weak and a little dizzy near the frozen aisle",
+      "Grabbed juice and leaned on the cart for support",
+      "Kept acting normal so no one would notice"
+    ],
     "time": "11:00 AM"
   },
   {
     "task": "Go to Class/Work",
-    "energy_cost": 45,
+    "energy_cost": 40,
     "normal_energy_cost": 20,
-    "feedback": "Brain fog made it hard to follow instructions",
+    "feedback": [
+      "Glucose was too high — couldn’t think clearly",
+      "Missed half of what the teacher was saying",
+      "Didn’t speak up — didn’t trust my brain to respond"
+    ],
     "time": "1:00 PM"
   },
   {
     "task": "Take a Shower",
-    "energy_cost": 35,
+    "energy_cost": 20,
     "normal_energy_cost": 10,
-    "feedback": "Had a low mid-shower and slipped slightly",
+    "feedback": [
+      "Felt unsteady while shampooing",
+      "Had to sit on the bathroom floor and eat something"
+    ],
     "time": "2:00 PM"
   }
 ]

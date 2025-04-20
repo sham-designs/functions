@@ -137,12 +137,34 @@ breakdownEl.className = breakdownClass;
 
 
 //last but not the least, show the feedback text
+// function showFeedback(feedback) {
+//     const p = document.createElement("p");
+//     p.textContent = feedback;
+//     feedbackBox.appendChild(p);
+//   }
+  
 function showFeedback(feedback) {
+  if (Array.isArray(feedback)) {
+    feedback.forEach((line, index) => {
+      setTimeout(() => {
+        const p = document.createElement("p");
+        p.textContent = line;
+        feedbackBox.appendChild(p);
+      }, index * 800);
+    });
+  } else {
     const p = document.createElement("p");
     p.textContent = feedback;
     feedbackBox.appendChild(p);
   }
-  
+}
+
+
+
+
+
+
+
 
   //to reset the energy bar to 100 again
   document.getElementById("restart-day").addEventListener("click", () => {
