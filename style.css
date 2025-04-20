@@ -429,7 +429,7 @@ header p{
 
 /* Responsive */
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 
   #meta-bar {
     flex-direction: column;
