@@ -16,5 +16,5 @@ Fully responsive. No libraries. Just logic and loss.
 
 Credits
 With thanks to my professors Michael and Eric — your belief shaped this system more than you'll know.
-Made for Type and Interaction 2 | Capstone 2025
+Made for Type and Interaction 2 | Capstone 2025 |
 Parsons School Of Design
