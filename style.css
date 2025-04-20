@@ -511,6 +511,14 @@ header p{
     box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
   }
 
+
+  #feedback-section {
+    max-height: 30vh;
+    overflow-y: auto;
+    padding-right: 0.25rem;
+  }
+
+
   #response-block {
     flex-direction: column; /*  stack instead of row */
     /* margin: 1rem;           */
