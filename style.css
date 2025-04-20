@@ -499,7 +499,9 @@ header p{
   
 
   #feedback-section {
-    padding: 1rem;
+    /* padding: 1rem; */
+    padding: 1rem 1rem; /* ✅ match internal spacing */
+  box-sizing: border-box; /* ✅ makes width obey padding */
     width: 100%;
     flex: 1 1 auto; 
     position: sticky; 
@@ -511,8 +513,10 @@ header p{
 
   #response-block {
     flex-direction: column; /*  stack instead of row */
-    margin: 1rem;          
+    /* margin: 1rem;           */
     gap: 2rem;
+    margin: 0; /* ✅ remove gap around container */
+    /* padding: 1rem;  */
   }
 
 
