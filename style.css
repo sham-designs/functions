@@ -493,46 +493,34 @@ header p{
   #task-buttons button {
     font-size: 0.8rem;
     padding: 0.75rem;
-    width: 100%; /* ✅ full width of container */
-    max-width: 100%; /* ✅ avoid inherited constraints */
+    width: 100%; 
+    max-width: 100%; 
   }
   
 
   #feedback-section {
     padding: 1rem;
     width: 100%;
-    flex: 1 1 auto; /* ⚠️ same as above */
-    position: sticky; /* ✅ now stays visible */
-    bottom: 0;        /* ✅ always visible as user scrolls */
+    flex: 1 1 auto; 
+    position: sticky; 
+    bottom: 0;       
     background: #0a0a0a;
     z-index: 99;
     box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
   }
 
   #response-block {
-    flex-direction: column; /* ✅ stack instead of row */
-    margin: 1rem;           /* ⚠️ was: margin: 6rem; → too big for mobile */
+    flex-direction: column; /*  stack instead of row */
+    margin: 1rem;          
     gap: 2rem;
   }
 
-  /* Optional: tighten energy bars further on mobile if needed later */
-  /*
-  #energy-section .energy-block {
-    width: 100%;
-  }
-  */
 
-  /* .modal {
-    align-items: flex-start;
-    padding-top: 20vh;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  } */
 
   .modal {
     padding: 2rem 1rem;
     align-items: flex-start;
-    overflow-y: auto; /* ✅ so long modals don’t clip */
+    overflow-y: auto;
   }
   
 
