@@ -107,7 +107,21 @@ header p{
 
 
 
+#status-block {
+  background-color: #111;
+  padding: 0.5rem 1rem;
+  border-radius: 0px;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+#tasks-done {
+  color: #aaa;
+}
 
 /* task buttons */
 
