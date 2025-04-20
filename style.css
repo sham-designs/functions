@@ -61,7 +61,7 @@ header p{
 /* energy blocks*/
 #energy-section {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   margin: 2rem 1rem;
   gap: 2rem;
@@ -142,7 +142,7 @@ header p{
 #task-buttons {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  /* gap: 1rem; */
   align-items: stretch;
 }
 
@@ -332,7 +332,8 @@ header p{
   justify-content: flex-start;
   align-items: flex-start;
   gap: 2rem;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
+  margin: 6rem;
 }
 
 
