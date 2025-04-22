@@ -503,7 +503,7 @@ header p{
   #task-section {
     padding: 1rem;
     width: 100%;
-    flex: 1 1 auto; /* ⚠️ was: flex: 0 0 50%; → reset for vertical flow */
+    flex: 1 1 auto; /* was: flex: 0 0 50%;  reset for vertical flow */
   }
 
   #task-buttons button {
@@ -516,8 +516,8 @@ header p{
 
   #feedback-section {
     /* padding: 1rem; */
-    padding: 1rem 1rem; /* ✅ match internal spacing */
-  box-sizing: border-box; /* ✅ makes width obey padding */
+    padding: 1rem 1rem; 
+   box-sizing: border-box; /*  makes width obey padding */
     width: 100%;
     flex: 1 1 auto; 
     position: sticky; 
@@ -536,10 +536,9 @@ header p{
 
 
   #response-block {
-    flex-direction: column; /*  stack instead of row */
-    /* margin: 1rem;           */
+    flex-direction: column; /*  stack for mobile */
     gap: 2rem;
-    margin: 0; /* ✅ remove gap around container */
+    margin: 0; /* remove gap around container */
     /* padding: 1rem;  */
   }
 
@@ -609,23 +608,23 @@ header p{
 
 
   .status-block.empty-placeholder {
-    display: none; /* ✅ clean remove when layout stacks */
-  }
+    display: none; 
 
   
 }
 
+}
+
+
   
-
-
-
+/* fixing alignment for energy bar and pill beneath (desktop) */
 
 
 #normal-energy-bar,
 #energy-bar {
   width: 100%;
-  max-width: 280px; /* ✅ both capped at same size */
-  margin: 0 auto;   /* ✅ centered under text */
+  max-width: 280px; 
+  margin: 0 auto;   
 }
 
 
