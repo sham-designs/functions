@@ -136,6 +136,13 @@ breakdownEl.className = breakdownClass;
     }
 
 
+//make breakdown = stable at start always on page load
+const breakdownEl = document.getElementById("breakdown");
+breakdownEl.textContent = "Breakdown: Stable";
+breakdownEl.className = "stable";
+
+
+
 //last but not the least, show the feedback text
 // function showFeedback(feedback) {
 //     const p = document.createElement("p");
