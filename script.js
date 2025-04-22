@@ -1,4 +1,7 @@
 
+//to have latest time on system crash modal
+const clickedTimes = [];
+
 
 //clickcount0 for metadata nav bar
 let clickedCount = 0;
@@ -80,6 +83,9 @@ function handleTaskClick(taskName) {
 document.getElementById("sim-time").textContent = `Time: ${task.time}`;
 document.getElementById("tasks-done").textContent = `Tasks: ${clickedCount}/5`;
 
+
+clickedTimes.push(task.time); //to update system crash modal time
+
 let breakdown = "Stable";
 let breakdownClass = "stable";
 if (energy < 60) {
@@ -107,7 +113,14 @@ breakdownEl.className = breakdownClass;
   
     // If my energy hits zero for the first time, then message is
     if (energy === 0 && cutoffMessage.textContent === "") {
-      cutoffMessage.textContent = `You ran out of energy by ${task.time}. A non-diabetic person still had ${normalEnergy}% left.`;
+      // cutoffMessage.textContent = `You ran out of energy by ${task.time}. A non-diabetic person still had ${normalEnergy}% left.`;
+      const sortedTimes = clickedTimes.sort(
+        (a, b) => new Date("1970/01/01 " + a) - new Date("1970/01/01 " + b)
+      );
+      const latestTime = sortedTimes[sortedTimes.length - 1];
+      
+      cutoffMessage.textContent = `You ran out of energy by ${latestTime}. A non-diabetic person still had ${normalEnergy}% left.`;
+      
       triggerSystemCrash();
     }
   }
