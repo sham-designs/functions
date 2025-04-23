@@ -225,6 +225,8 @@ const resetBtn = document.getElementById("resetExperience");
 const closeExit = document.getElementById("closeExit");
 
 function triggerSystemCrash() {
+  const audio = new Audio('crash.mp3');
+  audio.play();
   exitModal.style.display = "flex";
 }
 
